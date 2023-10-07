@@ -3,7 +3,9 @@ import 'normalize.css'
 import './index.scss'
 import App from './App.vue'
 import { createApp } from 'vue'
-import store from './store'
+import { createPinia } from 'pinia'
 import router from './router'
 
-createApp(App).use(router).use(store).mount('#app')
+const pinia = createPinia()
+
+createApp(App).use(router).use(pinia).mount('#app')

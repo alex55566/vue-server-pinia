@@ -1,15 +1,16 @@
-@import './fonts';
+@import "./fonts";
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
 }
-
 
 html {
     box-sizing: border-box;
 }
 
-body, html, #app {
+body,
+html,
+#app {
     height: 100%;
 }
 
@@ -49,4 +50,43 @@ svg path {
 
 html {
     scroll-behavior: smooth;
+}
+
+.btn {
+    padding: 10px 10px;
+    margin: 0;
+    border: 0;
+    background-color: unset;
+    background-color: $colorMattise;
+    cursor: pointer;
+    border-radius: 10px;
+    color: $colorWhite;
+    text-align: center;
+    font-weight: 700;
+    transition:
+        background-color,
+        color,
+        0.3s ease-in-out;
+    &:hover {
+        background-color: $colorToryBlue;
+    }
+    &:focus {
+        background-color: $colorToryBlue;
+    }
+    &.active {
+        color: grey;
+    }
+}
+
+button {
+    &:disabled {
+        opacity: 0.5;
+        cursor: unset;
+        &:hover {
+            background-color: $colorMattise;
+        }
+        a {
+            cursor: unset;
+        }
+    }
 }

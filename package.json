@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "set NODE_ENV=development&&webpack serve",
+    "dev": "set NODE_ENV=development&&webpack serve",
     "build-dev": "set NODE_ENV=development&&webpack",
     "build-prod": "set NODE_ENV=production&&webpack",
-    "clear": "rd /s /q dist"
+    "clear": "rd /s /q dist",
+    "server": "json-server -w server/db.json -p 3001",
+    "start": "concurrently \"npm run server\" \"npm run dev\""
   },
   "keywords": [],
   "author": "",
@@ -17,10 +19,12 @@
     "@babel/preset-env": "^7.19.0",
     "@vue/compiler-sfc": "^3.3.4",
     "babel-loader": "^8.2.5",
+    "concurrently": "^8.2.1",
     "css-loader": "^6.7.1",
     "html-loader": "^4.1.0",
     "html-webpack-plugin": "^5.5.0",
     "image-webpack-loader": "^8.1.0",
+    "json-server": "^0.17.4",
     "mini-css-extract-plugin": "^2.6.1",
     "postcss": "^8.4.16",
     "postcss-loader": "^7.0.1",
@@ -35,9 +39,11 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
+    "axios": "^1.5.1",
+    "nanoid": "^5.0.1",
     "normalize.css": "^8.0.1",
+    "pinia": "^2.1.6",
     "vue": "^3.3.4",
-    "vue-router": "^4.2.4",
-    "vuex": "^4.1.0"
+    "vue-router": "^4.2.4"
   }
 }

@@ -1,17 +1,29 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import MainPage from 'Pages/MainPage.vue'
-import QuestionsPage from 'Pages/QuestionsPage.vue'
+import AutorizationPage from 'Pages/AutorizationPage.vue'
+import TableOrdersPage from 'Pages/TableOrdersPage.vue'
+import NewOrder from 'Pages/NewOrder.vue'
+import ThanxPage from 'Pages/ThanxPage.vue'
 
 const routes = [
     {
         path: '/',
-        component: MainPage,
+        component: AutorizationPage,
         name: 'main'
     },
     {
-        path: '/questions',
-        component: QuestionsPage,
-        name: 'questions'
+        path: '/tables',
+        component: TableOrdersPage,
+        name: 'tables'
+    },
+    {
+        path: '/neworder',
+        component: NewOrder,
+        name: 'neworder'
+    },
+    {
+        path: '/thanx',
+        component: ThanxPage,
+        name: 'thanx'
     },
     {
         path: '/:pathMatch(.*)*',
